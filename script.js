@@ -1,6 +1,7 @@
 var APIKey = "058acc7c229d83ab5d1ab43bdb1ee10e";
 var citiesEl = document.getElementById("search-list");
 var cityContainer = document.getElementById("city-container");
+var imgIcon = document.getElementById("icon");
 var cityTitle = document.getElementById("cityH2");
 var temp = document.getElementById("temp");
 var wind = document.getElementById("wind");
@@ -55,6 +56,8 @@ $("#search-btn").click(function() {
         
         //First day temperature, main container
         cityTitle.innerHTML = cityEl + " " + today.format("MM/D/YYYY");
+        var iconCode = data.list[0].weather[0].icon;
+        imgIcon.src = "https://openweathermap.org/img/wn/" + iconCode + "@2x.png"
         temp.innerHTML = "Temp: " + data.list[0].main.temp;
         wind.innerHTML = "Wind: " + data.list[0].wind.speed + " MPH";
         humidity.innerHTML = "Humidity: " + data.list[0].main.humidity + " %";
@@ -62,6 +65,8 @@ $("#search-btn").click(function() {
         //Day 1 temperature of 5-day forecast
         var date1 = document.getElementById("date-1");
         date1.innerHTML = today.add(1, 'day').format("MM/D/YYYY");
+        var icon1 = document.getElementById("icon-1");
+        icon1 = document.getElementById("icon-1").src="https://openweathermap.org/img/wn/" + data.list[7].weather[0].icon + "@2x.png";
         var temp1 = document.getElementById("temp-1");
         temp1.innerHTML = "Temp: " + data.list[7].main.temp;
         var wind1 = document.getElementById("wind-1");
@@ -72,6 +77,8 @@ $("#search-btn").click(function() {
         //Day 2 temperature of 5-day forecast
         var date2 = document.getElementById("date-2");
         date2.innerHTML = today.add(2, 'day').format("MM/D/YYYY");
+        var icon2 = document.getElementById("icon-2");
+        icon2 = document.getElementById("icon-2").src="https://openweathermap.org/img/wn/" + data.list[15].weather[0].icon + "@2x.png";
         var temp2 = document.getElementById("temp-2");
         temp2.innerHTML = "Temp: " + data.list[15].main.temp;
         var wind2 = document.getElementById("wind-2");
@@ -82,6 +89,8 @@ $("#search-btn").click(function() {
         //Day 3 temperature of 5-day forecast
         var date3 = document.getElementById("date-3");
         date3.innerHTML = today.add(3, 'day').format("MM/D/YYYY");
+        var icon3 = document.getElementById("icon-3");
+        icon3 = document.getElementById("icon-3").src="https://openweathermap.org/img/wn/" + data.list[23].weather[0].icon + "@2x.png";
         var temp3 = document.getElementById("temp-3");
         temp3.innerHTML = "Temp: " + data.list[23].main.temp;
         var wind3 = document.getElementById("wind-3");
@@ -92,6 +101,8 @@ $("#search-btn").click(function() {
         //Day 4 temperature of 5-day forecast
         var date4 = document.getElementById("date-4");
         date4.innerHTML = today.add(4, 'day').format("MM/D/YYYY");
+        var icon4 = document.getElementById("icon-4");
+        icon4 = document.getElementById("icon-4").src="https://openweathermap.org/img/wn/" + data.list[31].weather[0].icon + "@2x.png";
         var temp4 = document.getElementById("temp-4");
         temp4.innerHTML = "Temp: " + data.list[31].main.temp;
         var wind4 = document.getElementById("wind-4");
@@ -102,6 +113,8 @@ $("#search-btn").click(function() {
         //Day 5 temperature of 5-day forecast
         var date5 = document.getElementById("date-5");
         date5.innerHTML = today.add(5, 'day').format("MM/D/YYYY");
+        var icon5 = document.getElementById("icon-5");
+        icon5 = document.getElementById("icon-5").src="https://openweathermap.org/img/wn/" + data.list[39].weather[0].icon + "@2x.png";
         var temp5 = document.getElementById("temp-5");
         temp5.innerHTML = "Temp: " + data.list[39].main.temp;
         var wind5 = document.getElementById("wind-5");
@@ -127,6 +140,8 @@ $("#search-btn").click(function() {
     
     //First day temperature, main container
     cityTitle.innerHTML = cityEl + " " + today.format("MM/D/YYYY");
+    var iconCode = data.list[0].weather[0].icon;
+    imgIcon.src = "https://openweathermap.org/img/wn/" + iconCode + "@2x.png"
     temp.innerHTML = "Temp: " + data.list[0].main.temp;
     wind.innerHTML = "Wind: " + data.list[0].wind.speed + " MPH";
     humidity.innerHTML = "Humidity: " + data.list[0].main.humidity + " %";
@@ -134,6 +149,8 @@ $("#search-btn").click(function() {
     //Day 1 temperature of 5-day forecast
     var date1 = document.getElementById("date-1");
     date1.innerHTML = today.add(1, 'day').format("MM/D/YYYY");
+    var icon1 = document.getElementById("icon-1");
+    icon1 = document.getElementById("icon-1").src="https://openweathermap.org/img/wn/" + data.list[7].weather[0].icon + "@2x.png";
     var temp1 = document.getElementById("temp-1");
     temp1.innerHTML = "Temp: " + data.list[7].main.temp;
     var wind1 = document.getElementById("wind-1");
@@ -144,6 +161,8 @@ $("#search-btn").click(function() {
     //Day 2 temperature of 5-day forecast
     var date2 = document.getElementById("date-2");
     date2.innerHTML = today.add(2, 'day').format("MM/D/YYYY");
+    var icon2 = document.getElementById("icon-2");
+    icon2 = document.getElementById("icon-2").src="https://openweathermap.org/img/wn/" + data.list[15].weather[0].icon + "@2x.png";
     var temp2 = document.getElementById("temp-2");
     temp2.innerHTML = "Temp: " + data.list[15].main.temp;
     var wind2 = document.getElementById("wind-2");
@@ -154,6 +173,8 @@ $("#search-btn").click(function() {
     //Day 3 temperature of 5-day forecast
     var date3 = document.getElementById("date-3");
     date3.innerHTML = today.add(3, 'day').format("MM/D/YYYY");
+    var icon3 = document.getElementById("icon-3");
+    icon3 = document.getElementById("icon-3").src="https://openweathermap.org/img/wn/" + data.list[23].weather[0].icon + "@2x.png";
     var temp3 = document.getElementById("temp-3");
     temp3.innerHTML = "Temp: " + data.list[23].main.temp;
     var wind3 = document.getElementById("wind-3");
@@ -164,6 +185,8 @@ $("#search-btn").click(function() {
     //Day 4 temperature of 5-day forecast
     var date4 = document.getElementById("date-4");
     date4.innerHTML = today.add(4, 'day').format("MM/D/YYYY");
+    var icon4 = document.getElementById("icon-4");
+    icon4 = document.getElementById("icon-4").src="https://openweathermap.org/img/wn/" + data.list[31].weather[0].icon + "@2x.png";
     var temp4 = document.getElementById("temp-4");
     temp4.innerHTML = "Temp: " + data.list[31].main.temp;
     var wind4 = document.getElementById("wind-4");
@@ -174,6 +197,8 @@ $("#search-btn").click(function() {
     //Day 5 temperature of 5-day forecast
     var date5 = document.getElementById("date-5");
     date5.innerHTML = today.add(5, 'day').format("MM/D/YYYY");
+    var icon5 = document.getElementById("icon-5");
+    icon5 = document.getElementById("icon-5").src="https://openweathermap.org/img/wn/" + data.list[39].weather[0].icon + "@2x.png";
     var temp5 = document.getElementById("temp-5");
     temp5.innerHTML = "Temp: " + data.list[39].main.temp;
     var wind5 = document.getElementById("wind-5");
