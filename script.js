@@ -5,7 +5,7 @@ var cityTitle = document.getElementById("cityH2");
 var temp = document.getElementById("temp");
 var wind = document.getElementById("wind");
 var humidity = document.getElementById("humidity");
-
+var searchArray = [];
 var today = dayjs();
 
 function getweatherAPI() {
@@ -34,12 +34,28 @@ $("#search-btn").click(function() {
     .then(function (response) {
         return response.json();
     })
+
     .then(function (data) {
         console.log(data);
 
         var cityBtn = document.createElement("button");
         cityBtn.textContent = cityEl;
         citiesEl.append(cityBtn);
+        
+        function addTo() {
+            searchArray.push(document.getElementById("city-text").value);
+            console.log(searchArray);
+        };
+
+        addTo();
+
+        function clearSearch() {
+            citiesEl.removeChild(citiesEl.firstElementChild);
+        };
+
+        if(searchArray.length > 5) {
+            clearSearch();
+        };
 
         //First day temperature, main container
         cityTitle.innerHTML = cityEl + " " + today.format("MM/D/YYYY");
@@ -98,6 +114,3 @@ $("#search-btn").click(function() {
         humidity5.innerHTML = "Humidity: " + data.list[39].main.humidity + " %";
     })
   });
-
-//change url tomorrow
-  //api.openweathermap.org/data/2.5/forecast/daily?q=Orlando&units=imperial&cnt=7&appid={API key}
