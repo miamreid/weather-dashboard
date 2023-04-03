@@ -10,6 +10,8 @@ var searchArray = [];
 var today = dayjs();
 var callBtn = document.querySelector(".city-button");
 
+
+//function to call weather api
 function getweatherAPI() {
     var requestUrl = "https://api.openweathermap.org/data/2.5/forecast?q=orlando&appid=058acc7c229d83ab5d1ab43bdb1ee10e&units=imperial";
 
@@ -20,7 +22,8 @@ function getweatherAPI() {
     .then(function (data) {
       console.log(data);
       console.log(data.list[0].main.temp);
-
+    
+      //Pulls in data of first day forecast based on location. Orlando by default until user searches a different city within the U.S.
       var iconCode = data.list[0].weather[0].icon;
       imgIcon.src = "./Assets/" + iconCode + ".png";
       cityTitle.innerHTML = data.city.name;
@@ -29,6 +32,7 @@ function getweatherAPI() {
       wind.innerHTML = "Wind: " + data.list[0].wind.speed + " MPH";
       humidity.innerHTML = "Humidity: " + data.list[0].main.humidity + " %";
 
+      //5 day forecast data pulled in
         var date1 = document.getElementById("date-1");
         date1.innerHTML = today.add(1, 'day').format("MM/D/YYYY");
         var icon1 = document.getElementById("icon-1");
@@ -92,6 +96,7 @@ function getweatherAPI() {
 
 getweatherAPI();
 
+//Search button function that passes value user enters in the text input field, saves to local storage, and displays info pulled from api data.
 $("#search-btn").click(function() {
     var searchDiv = $(this).parent().attr("id");
     var cityEl = $(this).parent().children("input").val();
@@ -113,6 +118,7 @@ $("#search-btn").click(function() {
     cityBtn.addEventListener("click", recallCity)
     citiesEl.append(cityBtn);
 
+    //function to recall previous searches from user on button click of their saved search
     function recallCity() {
         requestURL = "https://api.openweathermap.org/data/2.5/forecast?=" + cityEl + "&appid=058acc7c229d83ab5d1ab43bdb1ee10e&units=imperial";
 
@@ -190,7 +196,8 @@ $("#search-btn").click(function() {
         var humidity5 = document.getElementById("humidity-5");
         humidity5.innerHTML = "Humidity: " + data.list[39].main.humidity + " %";
     }
-        
+    
+    //adds the city searches to an array so there aren't too many city buttons displayed on the page
     function addTo() {
         searchArray.push(document.getElementById("city-text").value);
         console.log(searchArray);
@@ -198,6 +205,7 @@ $("#search-btn").click(function() {
 
     addTo();
 
+    //clears previous search buttons and array when there are over 5 cities searched
     function clearSearch() {
         citiesEl.removeChild(citiesEl.firstElementChild);
     };
