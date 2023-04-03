@@ -1,0 +1,229 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: #ffffff;
+    font-family: 'Bebas Neue', 'Helvetica', cursive;    
+}
+
+header {
+    width: 100%;
+    background-color: #ffffff;
+    padding: 20px;
+    color: #858EEB;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 {
+    display: flex;
+    flex-direction: column;
+    float: left;
+    margin-left: 25px;
+    color: #858EEB;
+    margin-bottom: 25px;
+    font-size: 42px;
+
+}
+
+.search-bar {
+    display: flex;
+    flex-direction:row;
+    float: right;
+    margin-right: 25px;
+    margin-bottom: 25px;
+    margin-left: 10px;
+}
+
+input[type=text] {
+    width: 300px;
+    padding: 15px;
+    border: 1px solid #858EEB;
+    box-shadow: 0 4px 8px 0 #858eeb4d, 0 6px 20px 0 #858eeb59;
+    color: #858EEB;
+    font-family: 'Bebas Neue', 'Helvetica', cursive;
+    margin-right: 15px;
+    border-radius: 10px;
+}
+
+input[type=text]:focus {
+    border: 1px solid black;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+.hero {
+    height: 400px;
+    background-image: linear-gradient(to bottom right, #2ec3ea52,#ab7cec57);
+    border-radius: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    margin-left: 25px;
+    margin-right: 25px;
+    padding: 25px;
+    justify-content: space-between;
+    box-shadow: 0 4px 8px 0 #858eeb4d, 0 6px 20px 0 #858eeb59;
+    color: #858EEB;
+    font-family: 'Bebas Neue', 'Helvetica', cursive;
+}
+
+#temp {
+    font-size: 124px;
+    font-family: 'Bebas Neue', 'Helvetica', cursive;
+}
+
+#wind, #humidity, #cityH2 {
+    font-size: 32px;
+    margin-bottom: 0px;
+    font-family: 'Bebas Neue', 'Helvetica', cursive;
+}
+
+#date {
+    font-size: 24px;
+}
+
+h2 {
+    margin-bottom: 25px;
+    font-size: 32px;
+    color: #858EEB;
+}
+
+h3, p {
+    font-size: 16px;
+    margin-bottom: 10px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+#icon, #icon-1, #icon-2, #icon-3, #icon-4, #icon-5 {
+    height: 50px;
+    width: 50px;
+    margin-bottom: 10px;
+}
+
+.body-container {
+    padding: 25px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.aside-left {
+    width: 25%;
+    border-radius: 25px;
+    background-color: #ffffff;
+    height: 550px;
+    box-shadow: 0 4px 8px 0 #858eeb4d, 0 6px 20px 0 #858eeb59;
+    text-align: center;
+    padding: 20px;
+}
+
+.column-flex {
+    display: flex;
+    flex-direction: column-reverse;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+}
+
+.aside-right {
+    margin-left: 20px;
+    width: 75%;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.forecast-container {
+    width: 100%;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.card {
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px 0 #858eeb4d, 0 6px 20px 0 #858eeb59;
+    border-radius: 25px;
+    padding: 25px;
+    margin:15px;
+}
+
+button {
+    transition-duration: 0.4s;
+}
+
+.city-button {
+    background-color: #2ec3ea52;
+    border-radius: 10px;
+    border: 1px solid #858EEB;
+    font-family: 'Bebas Neue', 'Helvetica', cursive;    
+    padding: 15px;
+    width: 100%;
+    font-size: 24px;
+    color: black;
+    margin: 10px;
+}
+
+#search-btn {
+    background-color:#2ec3ea52;
+    border-radius: 10px;
+    border: 1px solid #858EEB;
+    font-family: 'Bebas Neue', 'Helvetica', cursive;    
+    padding: 15px;
+    width: 100px;
+    font-size: 16px;
+    margin: 0px;
+}
+
+button:hover {
+    box-shadow: 0 4px 8px 0 #858eeb4d, 0 6px 20px 0 #858eeb59;
+}
+
+@media screen and (max-width: 955px) {
+    .forecast-container {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 791px) {
+    header {
+        flex-direction: column;
+    }
+
+    .body-container {
+        flex-direction: column-reverse;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .aside-left, .aside-right {
+        width: 100%;
+        padding: 10px;
+        margin: 15px;
+    }
+
+    .card {
+        margin-top: 15px;
+        margin-bottom: 15px;
+        margin: 15px 0 15px 0;
+    }
+}
+
+@media screen and (max-width: 495px) {
+    .hero {
+        flex-direction: row;
+        align-content: center;
+    }
+
+    div.hero {
+        width: 100%;
+    }
+}
