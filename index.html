@@ -4,65 +4,85 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
     <title>Document</title>
 </head>
 <body>
+    <header>
     <h1>Weather Dashboard</h1>
     
-    <div id="search">
-        <h2>Search for a City</h2>
-        <input id="city-text" type="text">
+    <div class="search-bar" id="search">
+        <input id="city-text" type="text" placeholder="Search for a City">
         <button id="search-btn" value="add">Search</button>
     </div>
-    <div id="search-list">
-        <!--Javascript button created here on click function-->
-    </div>
-    <div id="city-container">
+</header>
+<main>
+    <div class="hero">
+        <div>
+        <img id="icon" src="./Assets/01d.png">
+        <p id="temp">Temp</p>
         <h2 id="cityH2">City</h2>
-        <img id="icon" src=""/>
-        <p id="temp">Temp:</p>
+        <p id="date">Date</p>
+        </div>
+        <div>
         <p id="wind">Wind:</p>
         <p id="humidity">Humidity:</p>
-    </div>
-    <div id="forecast">
-        <h2>5-Day Forecast</h2>
-        <div class="card-1">
-            <h3 id="date-1">--</h3>
-            <img id="icon-1" src=""/>
-            <p id="temp-1">--</p>
-            <p id="wind-1">--</p>
-            <p id="humidity-1">--</p>
-        </div>
-        <div class="card-2">
-            <h3 id="date-2">--</h3>
-            <img id="icon-2" src=""/>
-            <p id="temp-2">--</p>
-            <p id="wind-2">--</p>
-            <p id="humidity-2">--</p>
-        </div>
-        <div class="card-3">
-            <h3 id="date-3">--</h3>
-            <img id="icon-3" src=""/>
-            <p id="temp-3">--</p>
-            <p id="wind-3">--</p>
-            <p id="humidity-3">--</p>
-        </div>
-        <div class="card-4">
-            <h3 id="date-4">--</h3>
-            <img id="icon-4" src=""/>
-            <p id="temp-4">--</p>
-            <p id="wind-4">--</p>
-            <p id="humidity-4">--</p>
-        </div>
-        <div class="card-5">
-            <h3 id="date-5">--</h3>
-            <img id="icon-5" src=""/>
-            <p id="temp-5">--</p>
-            <p id="wind-5">--</p>
-            <p id="humidity-5">--</p>
         </div>
     </div>
+    <div class="body-container">
+        <div class="aside-left">
+            <h2>Search History</h2>
+            <div class="column-flex" id="search-list"></div>
+        <!--Javascript button created here on click function-->
+        </div>
+        <div class="aside-right">
+            <h2>5-Day Forecast</h2>
+            
+            <div class="forecast-container">
+                <div class="card">
+                <h3 id="date-1">--</h3>
+                <img id="icon-1" src=""/>
+                <p id="temp-1">--</p>
+                <p id="wind-1">--</p>
+                <p id="humidity-1">--</p>
+            </div>
+            <div class="card">
+                <h3 id="date-2">--</h3>
+                <img id="icon-2" src=""/>
+                <p id="temp-2">--</p>
+                <p id="wind-2">--</p>
+                <p id="humidity-2">--</p>
+            </div>
+            <div class="card">
+                <h3 id="date-3">--</h3>
+                <img id="icon-3" src=""/>
+                <p id="temp-3">--</p>
+                <p id="wind-3">--</p>
+                <p id="humidity-3">--</p>
+            </div>
+            <div class="card">
+                <h3 id="date-4">--</h3>
+                <img id="icon-4" src=""/>
+                <p id="temp-4">--</p>
+                <p id="wind-4">--</p>
+                <p id="humidity-4">--</p>
+            </div>
+            <div class="card">
+                <h3 id="date-5">--</h3>
+                <img id="icon-5" src=""/>
+                <p id="temp-5">--</p>
+                <p id="wind-5">--</p>
+                <p id="humidity-5">--</p>
+            </div>
+        </div>
+    </div>
+</div>
+</main>
+    
+    
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
