@@ -6,6 +6,8 @@ For users that wish to search a five day forecast within any city in the United 
 
 This project helped me gain a solid understanding of using server side APIs and pulling in the right data fields, and mapping them to the right location within the html. The project also uses dayjs to find today's date and display the date over the next five days with the weather.
 
+<img width="1469" alt="Screen Shot 2023-04-03 at 9 13 23 PM" src="https://user-images.githubusercontent.com/124822025/229663992-6dc01c57-fe1d-429a-9973-af6c43405ee2.png">
+
 ## Usage
 
 Users can search any city in the United States to see a current five-day forecast. 
